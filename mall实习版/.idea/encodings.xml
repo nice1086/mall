@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/mall" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-leaf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-multishop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-platform" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-rbac" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-api/mall4cloud-api-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-cache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-database" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-rocketmq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-common/mall4cloud-common-security" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-leaf" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-multishop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-payment" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-platform" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-product" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-rbac" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-search" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mall/mall4cloud-user" charset="UTF-8" />
+  </component>
+</project>
