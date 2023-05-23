@@ -7,7 +7,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/mall/pom.xml" />
+        <option value="$PROJECT_DIR$/mall/mall4cloud-search/pom.xml" />
+        <option value="$PROJECT_DIR$/mall/mall4cloud-user/pom.xml" />
+        <option value="$PROJECT_DIR$/mall/mall4cloud-rbac/pom.xml" />
+        <option value="$PROJECT_DIR$/mall/mall4cloud-product/pom.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
