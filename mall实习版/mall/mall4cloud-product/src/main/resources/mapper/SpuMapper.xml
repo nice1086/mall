@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mall4j.cloud.product.mapper.SpuMapper">
-    <select id="getSpuListInfo" parameterType="String" resultMap="SpuVO">
+    <select id="getSpuListInfo" resultMap="SpuVO">
        select spu_id,create_time,update_time,brand_id,category_id,
        shop_category_id,shop_id,name,selling_point,main_img_url,
        img_urls,video,price_fee,market_price_fee,status,has_sku_img,seq
        from spu
     </select>
 
-    <select id="listBySid" parameterType="String" resultMap="SpuVO">
+    <select id="listBySid" parameterType="Long" resultMap="SpuVO">
        select spu_id,create_time,update_time,brand_id,category_id,
        shop_category_id,shop_id,name,selling_point,main_img_url,
        img_urls,video,price_fee,market_price_fee,status,has_sku_img,seq
@@ -38,4 +38,88 @@
             <if test="seq != null and seq != ''">seq,</if>
         </trim>
     </insert>
+
+    <update id="update" parameterType="SpuVO">
+        update spu
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="spu_id != null and spu_id != ''">spu_id,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_time != null and update_time != ''">update_time,</if>
+            <if test="brand_id != null and brand_id != ''">brand_id,</if>
+            <if test="category_id != null and category_id != ''">category_id,</if>
+            <if test="shop_category_id != null and shop_category_id != ''">shop_category_id,</if>
+            <if test="shop_id != null and shop_id != ''">shop_id,</if>
+            <if test="name != null and name != ''">name,</if>
+            <if test="selling_point != null and selling_point != ''">selling_point,</if>
+            <if test="main_img_url != null and main_img_url != ''">main_img_url,</if>
+            <if test="img_urls != null and img_urls != ''">img_urls,</if>
+            <if test="video != null and video != ''">video,</if>
+            <if test="price_fee != null and price_fee != ''">price_fee,</if>
+            <if test="market_price_fee != null and market_price_fee != ''">market_price_fee,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="has_sku_img != null and has_sku_img != ''">has_sku_img,</if>
+            <if test="seq != null and seq != ''">seq,</if>
+        </trim>
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        delete from spu where spu_id = #{spuId}
+    </delete>
+
+    <select id="getPage" resultMap="SpuVO">
+       select spu_id,create_time,update_time,brand_id,category_id,
+       shop_category_id,shop_id,name,selling_point,main_img_url,
+       img_urls,video,price_fee,market_price_fee,status,has_sku_img,seq
+       from spu
+    </select>
+
+    <select id="getPlatformPage" resultMap="SpuVO">
+       select spu_id,create_time,update_time,brand_id,category_id,
+       shop_category_id,shop_id,name,selling_point,main_img_url,
+       img_urls,video,price_fee,market_price_fee,status,has_sku_img,seq
+       from spu
+    </select>
+
+    <update id="putAndDown" parameterType="SkuVO">
+        update sku
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="skuId != null and skuId != ''">skuId,</if>
+            <if test="spuId != null and spuId != ''">spuId,</if>
+            <if test="attrs != null and attrs != ''">attrs,</if>
+            <if test="skuName != null and skuName != ''">skuName,</if>
+            <if test="imgUrl != null and imgUrl != ''">imgUrl,</if>
+            <if test="priceFee != null and priceFee != ''">priceFee,</if>
+            <if test="marketPriceFee != null and marketPriceFee != ''">marketPriceFee,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="stock != null and stock != ''">stock,</if>
+            <if test="partyCode != null and partyCode != ''">partyCode,</if>
+            <if test="modelId != null and modelId != ''">modelId,</if>
+            <if test="weight != null and weight != ''">weight,</if>
+            <if test="volume != null and volume != ''">volume,</if>
+            <if test="spuSkuAttrValues != null and spuSkuAttrValues != ''">spuSkuAttrValues,</if>
+            <if test="status == 0">
+                delete from sku where skuId = #{skuVo.skuId}
+            </if>
+        </trim>
+    </update>
+
+    <update id="updateSpu" parameterType="SkuDTO">
+        update sku
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="categoryId != null and categoryId != ''">categoryId,</if>
+            <if test="categoryIds != null and categoryIds != ''">categoryIds,</if>
+            <if test="attrs != null and attrs != ''">attrs,</if>
+            <if test="skuName != null and skuName != ''">skuName,</if>
+            <if test="imgUrl != null and imgUrl != ''">imgUrl,</if>
+            <if test="priceFee != null and priceFee != ''">priceFee,</if>
+            <if test="marketPriceFee != null and marketPriceFee != ''">marketPriceFee,</if>
+            <if test="status != null and status != ''">status,</if>
+            <if test="stock != null and stock != ''">stock,</if>
+            <if test="partyCode != null and partyCode != ''">partyCode,</if>
+            <if test="modelId != null and modelId != ''">modelId,</if>
+            <if test="weight != null and weight != ''">weight,</if>
+            <if test="volume != null and volume != ''">volume,</if>
+            <if test="spuSkuAttrValues != null and spuSkuAttrValues != ''">spuSkuAttrValues,</if>
+        </trim>
+    </update>
 </mapper>

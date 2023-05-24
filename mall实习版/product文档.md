@@ -1631,7 +1631,7 @@
 |&emsp;&emsp;mainImgUrl|商品主图||false|string||
 |&emsp;&emsp;marketPriceFee|市场价||false|integer(int64)||
 |&emsp;&emsp;name|spu名称||false|string||
-|&emsp;&emsp;priceFee|售价||false|integer(int64)||
+|&emsp;&emsp;priceFee|售价||``false|integer(int64)||
 |&emsp;&emsp;sellingPoint|卖点||false|string||
 |&emsp;&emsp;seq|序号||false|integer(int32)||
 |&emsp;&emsp;shopCategoryId|店铺分类ID||false|integer(int64)||
