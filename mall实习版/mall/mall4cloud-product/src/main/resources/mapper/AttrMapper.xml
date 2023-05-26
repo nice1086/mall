@@ -4,7 +4,7 @@
 <mapper namespace="com.mall4j.cloud.product.mapper.AttrMapper">
     <select id="listByAid" parameterType="Long" resultMap="AttrVO">
        select attr_id,create_time,update_time,shop_id,
-              name,desc,search_type,attr_type
+              `name`,`desc`,search_type,attr_type
        from attr where attr_id = #{attr_id}
     </select>
 
@@ -15,7 +15,7 @@
             <if test="create_time != null and create_time != ''">create_time,</if>
             <if test="update_time != null and update_time != ''">update_time,</if>
             <if test="shop_id != null and shop_id != ''">shop_id,</if>
-            <if test="name != null and name != ''">name,</if>
+            <if test="name != null and name != ''">`name`,</if>
             <if test="search_type != null and search_type != ''">search_type,</if>
             <if test="attr_type != null and attr_type != ''">attr_type,</if>
         </trim>
@@ -28,7 +28,7 @@
             <if test="create_time != null and create_time != ''">create_time,</if>
             <if test="update_time != null and update_time != ''">update_time,</if>
             <if test="shop_id != null and shop_id != ''">shop_id,</if>
-            <if test="name != null and name != ''">name,</if>
+            <if test="name != null and name != ''">`name`,</if>
             <if test="search_type != null and search_type != ''">search_type,</if>
             <if test="attr_type != null and attr_type != ''">attr_type,</if>
         </trim>
@@ -40,20 +40,20 @@
 
     <select id="listByCid" parameterType="Long" resultMap="AttrVO">
        select attr_id,create_time,update_time,shop_id,
-              name,desc,search_type,attr_type
+              `name`,`desc`,search_type,attr_type
        from attr where attr_id = (select attr_id from attr_category where
        category_id = #{category_id})
     </select>
 
     <select id="listShop" parameterType="Long" resultMap="AttrVO">
         select attr_id,create_time,update_time,shop_id,
-              name,desc,search_type,attr_type
+              `name`,`desc`,search_type,attr_type
         from attr
     </select>
 
     <select id="getPage" resultMap="AttrVO">
        select attr_id,create_time,update_time,shop_id,
-              name,desc,search_type,attr_type
+              `name`,`desc`,search_type,attr_type
        from attr
     </select>
 </mapper>

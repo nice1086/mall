@@ -5,7 +5,7 @@
 
     <select id="listByCid" parameterType="Long" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category where category_id = #{category_id}
     </select>
 
@@ -17,13 +17,13 @@
             <if test="update_time != null and update_time != ''">update_time,</if>
             <if test="shop_id != null and shop_id != ''">shop_id,</if>
             <if test="parent_id != null and parent_id != ''">parent_id,</if>
-            <if test="name != null and name != ''">name,</if>
-            <if test="desc != null and desc != ''">desc,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
             <if test="path != null and path != ''">path,</if>
             <if test="status != null and status != ''">status,</if>
             <if test="icon != null and icon != ''">icon,</if>
             <if test="img_url != null and img_url != ''">img_url,</if>
-            <if test="level != null and level != ''">level,</if>
+            <if test="level != null and level != ''">`level`,</if>
             <if test="seq != null and seq != ''">seq,</if>
         </trim>
     </insert>
@@ -36,13 +36,13 @@
             <if test="update_time != null and update_time != ''">update_time,</if>
             <if test="shop_id != null and shop_id != ''">shop_id,</if>
             <if test="parent_id != null and parent_id != ''">parent_id,</if>
-            <if test="name != null and name != ''">name,</if>
-            <if test="desc != null and desc != ''">desc,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
             <if test="path != null and path != ''">path,</if>
             <if test="status != null and status != ''">status,</if>
             <if test="icon != null and icon != ''">icon,</if>
             <if test="img_url != null and img_url != ''">img_url,</if>
-            <if test="level != null and level != ''">level,</if>
+            <if test="level != null and level != ''">`level`,</if>
             <if test="seq != null and seq != ''">seq,</if>
         </trim>
     </update>
@@ -59,44 +59,44 @@
             <if test="update_time != null and update_time != ''">update_time,</if>
             <if test="shop_id != null and shop_id != ''">shop_id,</if>
             <if test="parent_id != null and parent_id != ''">parent_id,</if>
-            <if test="name != null and name != ''">name,</if>
-            <if test="desc != null and desc != ''">desc,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
             <if test="path != null and path != ''">path,</if>
             <if test="status != null and status != ''">status,</if>
             <if test="icon != null and icon != ''">icon,</if>
             <if test="img_url != null and img_url != ''">img_url,</if>
-            <if test="level != null and level != ''">level,</if>
+            <if test="level != null and level != ''">`level`,</if>
             <if test="seq != null and seq != ''">seq,</if>
         </trim>
     </update>
 
     <select id="listByPid" parameterType="Long" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category where parent_id = #{parent_id}
     </select>
 
     <select id="listPlatform" parameterType="Long" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category
     </select>
 
     <select id="listShop" parameterType="Long" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category
     </select>
 
     <select id="list" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category where parent_id = #{parent_id} AND shop_id = #{shop_id}
     </select>
 
     <select id="listShop" resultMap="CatVO">
        select category_id,create_time,update_time,shop_id,parent_id,
-       name,desc,path,status,icon,img_url,level,seq
+       `name`,`desc`,path,status,icon,img_url,`level`,seq
        from category where shop_id = #{shop_id}
     </select>
 </mapper>
