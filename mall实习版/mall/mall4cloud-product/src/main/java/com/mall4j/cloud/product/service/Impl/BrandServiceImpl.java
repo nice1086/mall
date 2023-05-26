@@ -43,4 +43,37 @@ public class BrandServiceImpl implements BrandService {
     public List<BrandVO> listBrand() {
         return brandMapper.listBrand();
     }
+
+    @Override
+    public List<BrandVO> listByBrid(Long brand_id) {
+        return brandMapper.listByBrid(brand_id);
+    }
+
+    @Override
+    public List<BrandVO> insertBrand(BrandVO brandVO) {
+        return brandMapper.insertBrand(brandVO);
+    }
+
+    @Override
+    public List<BrandVO> updateBrand(BrandVO brandVO) {
+        return brandMapper.updateBrand(brandVO);
+    }
+
+    @Override
+    public List<BrandVO> deleteBrand(Long brand_id) {
+        return brandMapper.deleteBrand(brand_id);
+    }
+
+    @Override
+    public List<BrandVO> getPageSelect(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        List<BrandVO> list = brandMapper.getPageSelect();
+        PageInfo<BrandVO> pageInfo = new PageInfo(list);
+        return pageInfo.getList();
+    }
+
+    @Override
+    public List<BrandVO> updateBrandStatus(BrandVO brandVO) {
+        return brandMapper.updateBrandStatus(brandVO);
+    }
 }

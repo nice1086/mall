@@ -17,4 +17,16 @@ public interface BrandService {
     List<BrandVO> getPage(Integer pageNum, Integer pageSize);
 
     List<BrandVO> listBrand();
+
+    List<BrandVO> listByBrid(Long brand_id);
+
+    List<BrandVO> insertBrand(BrandVO brandVO);
+
+    List<BrandVO> updateBrand(BrandVO brandVO);
+
+    List<BrandVO> deleteBrand(Long brand_id);
+
+    List<BrandVO> getPageSelect(Integer pageNum, Integer pageSize);
+
+    List<BrandVO> updateBrandStatus(BrandVO brandVO);
 }
