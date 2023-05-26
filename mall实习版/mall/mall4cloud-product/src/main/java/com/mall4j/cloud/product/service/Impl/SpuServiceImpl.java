@@ -69,4 +69,9 @@ public class SpuServiceImpl implements SpuService {
     public void updateSpu(SpuDTO spuDTO) {
         spuMapper.updateSpu(spuDTO);
     }
+
+    @Override
+    public List<SpuVO> getProdInfo(Long spuId) {
+        return spuMapper.getProdInfo(spuId);
+    }
 }

@@ -26,4 +26,6 @@ public interface SpuService {
     void putAndDown(SkuVO skuVO);
 
     void updateSpu(SpuDTO spuDTO);
+
+    List<SpuVO> getProdInfo(Long spuId);
 }

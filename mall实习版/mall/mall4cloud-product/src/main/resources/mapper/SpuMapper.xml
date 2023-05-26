@@ -122,4 +122,11 @@
             <if test="spuSkuAttrValues != null and spuSkuAttrValues != ''">spuSkuAttrValues,</if>
         </trim>
     </update>
+
+    <select id="getProdInfo" parameterType="Long" resultMap="SpuVO">
+       select spu_id,create_time,update_time,brand_id,category_id,
+       shop_category_id,shop_id,name,selling_point,main_img_url,
+       img_urls,video,price_fee,market_price_fee,status,has_sku_img,seq
+       from spu where spu_id = #{spuId}
+    </select>
 </mapper>

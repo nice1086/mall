@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController("spuController")
-@RequestMapping("/spu")
-@Api(tags = "spu信息")
+@RequestMapping("/admin/spu")
+@Api(tags = "admin-spu信息")
 public class SpuController {
 
     @Autowired
@@ -100,4 +100,5 @@ public class SpuController {
         spuService.updateSpu(spuDTO);
         return ServerResponseEntity.success();
     }
+
 }

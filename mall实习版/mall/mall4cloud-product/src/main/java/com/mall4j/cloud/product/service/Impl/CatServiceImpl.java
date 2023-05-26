@@ -51,4 +51,14 @@ public class CatServiceImpl implements CatService {
     public List<CatVO> listShop() {
         return catMapper.listShop();
     }
+
+    @Override
+    public List<CatVO> list(Long parent_id, Long shop_id) {
+        return catMapper.list(parent_id,shop_id);
+    }
+
+    @Override
+    public List<CatVO> listShop(Long shop_id) {
+        return catMapper.listShop(shop_id);
+    }
 }

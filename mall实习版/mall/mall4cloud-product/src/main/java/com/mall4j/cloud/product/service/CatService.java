@@ -22,4 +22,8 @@ public interface CatService {
     List<CatVO> listPlatform();
 
     List<CatVO> listShop();
+
+    List<CatVO> list(Long parent_id, Long shop_id);
+
+    List<CatVO> listShop(Long shop_id);
 }

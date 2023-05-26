@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("spuController")
-@RequestMapping("/category")
-@Api(tags = "分类信息")
+@RestController("catController")
+@RequestMapping("/admin/category")
+@Api(tags = "admin-分类信息")
 public class CatController {
     @Autowired
     private CatService catService;
-
 
     @GetMapping("/list_by_categoryid")
     @ApiOperation(value = "通过categoryid获取分类列表", notes = "通过categoryid获取分类列表")
@@ -81,4 +80,6 @@ public class CatController {
         List<CatVO> list = catService.listShop();
         return ServerResponseEntity.success(list);
     }
+
+
 }
