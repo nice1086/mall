@@ -4,6 +4,7 @@ import com.mall4j.cloud.common.response.ServerResponseEntity;
 import com.mall4j.cloud.product.service.AttrService;
 import com.mall4j.cloud.product.vo.app.AttrVO;
 import com.mall4j.cloud.product.vo.app.CatVO;
+import com.mall4j.cloud.product.vo.app.SkuStockVO;
 import com.mall4j.cloud.product.vo.app.SpuVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -23,14 +24,14 @@ public class AttrController {
 
     @GetMapping("/list_by_attrid")
     @ApiOperation(value = "通过attrid获取属性列表", notes = "通过attrid获取属性列表")
-    public ServerResponseEntity<List<AttrVO>> listBySid(Long attr_id) {
-        List<AttrVO> list = attrService.listByAid(attr_id);
-        return ServerResponseEntity.success(list);
+    public List<AttrVO> listBySid(Long attr_id) {
+
+        return attrService.listByAid(attr_id);
     }
 
     @PostMapping("/save_attr")
     @ApiOperation(value = "保存attr信息")
-    public ServerResponseEntity<Void> updateUser(@RequestBody AttrVO attrVO) {
+    public ServerResponseEntity<Void> updateAttr(@RequestBody AttrVO attrVO) {
         attrService.save(attrVO);
         return ServerResponseEntity.success();
     }
@@ -51,16 +52,16 @@ public class AttrController {
 
     @GetMapping("/get_attrs_by_category_id")
     @ApiOperation(value = "根据id，获取分类列表信息")
-    public ServerResponseEntity<List<AttrVO>> listByCid(Long category_id) {
-        List<AttrVO> list = attrService.listByCid(category_id);
-        return ServerResponseEntity.success(list);
+    public List<AttrVO> listByCid(Long category_id) {
+
+        return attrService.listByCid(category_id);
     }
 
     @GetMapping("/get_shop_attrs")
     @ApiOperation(value = "获取店铺中的销售属性")
-    public ServerResponseEntity<List<AttrVO>> listShop() {
-        List<AttrVO> list = attrService.listShop();
-        return ServerResponseEntity.success(list);
+    public List<AttrVO> listShop() {
+
+        return attrService.listShop();
     }
 
     @GetMapping("/page")

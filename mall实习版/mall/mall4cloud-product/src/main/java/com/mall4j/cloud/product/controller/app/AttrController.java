@@ -22,8 +22,8 @@ public class AttrController {
 
     @GetMapping("/attr")
     @ApiOperation(value = "通过attrid获取属性列表", notes = "通过attrid获取属性列表")
-    public ServerResponseEntity<List<AttrVO>> listBySid(Long attr_id) {
-        List<AttrVO> list = attrService.listByAid(attr_id);
-        return ServerResponseEntity.success(list);
+    public List<AttrVO> listBySid(Long attr_id) {
+
+        return attrService.listByAid(attr_id);
     }
 }

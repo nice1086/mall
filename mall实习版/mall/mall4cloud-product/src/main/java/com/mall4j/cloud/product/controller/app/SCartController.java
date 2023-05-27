@@ -59,22 +59,22 @@ public class SCartController {
 
     @GetMapping("/expiry_prod_list")
     @ApiOperation(value = "获取购物车失效商品列表", notes = "获取购物车失效商品列表")
-    public ServerResponseEntity<List<SCartVO>> selectShop() {
-        List<SCartVO> list = sCartService.selectShop();
-        return ServerResponseEntity.success(list);
+    public List<SCartVO> selectShop() {
+
+        return sCartService.selectShop();
     }
 
     @GetMapping("/info")
     @ApiOperation(value = "获取用户购物车信息", notes = "获取用户购物车信息")
-    public ServerResponseEntity<List<SCartVO>> selectInfo() {
-        List<SCartVO> list = sCartService.selectInfo();
-        return ServerResponseEntity.success(list);
+    public List<SCartVO> selectInfo() {
+
+        return  sCartService.selectInfo();
     }
 
     @GetMapping("/prod_count")
     @ApiOperation(value = "获取购物车商品数量", notes = "获取购物车商品数量")
-    public ServerResponseEntity<List<SCartVO>> selectShopNum() {
-        List<SCartVO> list = sCartService.selectShopNum();
-        return ServerResponseEntity.success(list);
+    public List<SCartVO> selectShopNum() {
+
+        return  sCartService.selectShopNum();
     }
 }

@@ -22,15 +22,14 @@ public class CatController {
 
     @GetMapping("/category_list")
     @ApiOperation(value = "根据id，获取分类列表信息")
-    public ServerResponseEntity<List<CatVO>> list(Long parent_id, Long shop_id) {
-        List<CatVO> list = catService.list(parent_id,shop_id);
-        return ServerResponseEntity.success(list);
+    public List<CatVO> list(Long parent_id, Long shop_id) {
+
+        return catService.list(parent_id,shop_id);
     }
 
     @GetMapping("/shop_category_list")
-    @ApiOperation(value = "根据id，获取分类列表信息")
-    public ServerResponseEntity<List<CatVO>> listShop(Long shop_id) {
-        List<CatVO> list = catService.listShop(shop_id);
-        return ServerResponseEntity.success(list);
+    @ApiOperation(value = "根据id，获取购物车列表信息")
+    public List<CatVO> listShop(Long shop_id) {
+        return  catService.listShop(shop_id);
     }
 }

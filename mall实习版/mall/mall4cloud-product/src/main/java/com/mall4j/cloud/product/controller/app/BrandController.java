@@ -24,9 +24,9 @@ public class BrandController {
 
     @GetMapping("/list_by_category")
     @ApiOperation(value = "通过categoryid获取", notes = "通过categoryid获取")
-    public  ServerResponseEntity<List<BrandVO>> listByCatid(Long category_id) {
-        List<BrandVO> list = brandService.listByCatid(category_id);
-        return ServerResponseEntity.success(list);
+    public  List<BrandVO> listByCatid(Long category_id) {
+
+        return brandService.listByCatid(category_id);
     }
 
     @GetMapping("/page_product")
@@ -42,8 +42,7 @@ public class BrandController {
 
     @GetMapping("/top_brand_list")
     @ApiOperation(value = "置顶品牌列表", notes = "置顶品牌列表")
-    public ServerResponseEntity<List<BrandVO>> listBrand() {
-        List<BrandVO> list = brandService.listBrand();
-        return ServerResponseEntity.success(list);
+    public List<BrandVO> listBrand() {
+        return brandService.listBrand();
     }
 }

@@ -5,7 +5,6 @@ import com.github.pagehelper.PageInfo;
 import com.mall4j.cloud.product.mapper.AttrMapper;
 import com.mall4j.cloud.product.service.AttrService;
 import com.mall4j.cloud.product.vo.app.AttrVO;
-import com.mall4j.cloud.product.vo.app.SpuVO;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -21,12 +20,13 @@ public class AttrServiceImpl implements AttrService {
     @Override
     public void save(AttrVO attrVO) {
         attrMapper.save(attrVO);
+
     }
 
     @Override
     public void update(AttrVO attrVO) {
         attrMapper.update(attrVO);
-    }
+   }
 
     @Override
     public void delete(Long attr_id) {

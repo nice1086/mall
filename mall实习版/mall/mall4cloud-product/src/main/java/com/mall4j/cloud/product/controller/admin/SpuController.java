@@ -31,16 +31,16 @@ public class SpuController {
 
     @GetMapping("/list")
     @ApiOperation(value = "获取spu信息列表", notes = "获取spu信息列表")
-    public ServerResponseEntity<List<SpuVO>> list() {
-        List<SpuVO> list = spuService.getSpuListInfo();
-        return ServerResponseEntity.success(list);
+    public List<SpuVO> list() {
+
+        return spuService.getSpuListInfo();
     }
 
     @GetMapping("/list_by_spuId")
     @ApiOperation(value = "通过spuid获取spu列表", notes = "通过spuid获取spu列表")
-    public ServerResponseEntity<List<SpuVO>> listBySid(Long spuId) {
-        List<SpuVO> list = spuService.listBySid(spuId);
-        return ServerResponseEntity.success(list);
+    public List<SpuVO> listBySid(Long spuId) {
+
+        return spuService.listBySid(spuId);
     }
 
     @PostMapping("/save_product")

@@ -22,8 +22,8 @@ public class SpuController {
 
     @GetMapping("/prod_info")
     @ApiOperation(value = "获取商品信息列表", notes = "获取商品信息列表")
-    public ServerResponseEntity<List<SpuVO>> prodInfo(Long spuId) {
-        List<SpuVO> list = spuService.getProdInfo(spuId);
-        return ServerResponseEntity.success(list);
+    public List<SpuVO> prodInfo(Long spuId) {
+
+        return spuService.getProdInfo(spuId);
     }
 }

@@ -34,10 +34,10 @@ public class BrandController {
 
     @GetMapping("/get_brand_by_category_id")
     @ApiOperation(value = "通过categoryid获取brand", notes = "通过categoryid获取brand")
-    public  ServerResponseEntity<List<BrandVO>> listByBid(Long category_id) {
+    public  List<BrandVO> listByBid(Long category_id) {
         Long brand_id = listBySid(category_id);
-        List<BrandVO> list = brandService.listByBid(brand_id);
-        return ServerResponseEntity.success(list);
+
+        return brandService.listByBid(brand_id);
     }
 
 }

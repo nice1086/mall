@@ -26,9 +26,9 @@ public class CatController {
 
     @GetMapping("/list_by_categoryid")
     @ApiOperation(value = "通过categoryid获取分类列表", notes = "通过categoryid获取分类列表")
-    public ServerResponseEntity<List<CatVO>> listBySid(Long category_id) {
-        List<CatVO> list = catService.listByCid(category_id);
-        return ServerResponseEntity.success(list);
+    public List<CatVO> listBySid(Long category_id) {
+
+        return catService.listByCid(category_id);
     }
 
     @PostMapping("/save_category")
@@ -62,23 +62,23 @@ public class CatController {
 
     @GetMapping("/get_list_by_parent_id")
     @ApiOperation(value = "根据上级id，获取分类列表信息")
-    public ServerResponseEntity<List<CatVO>> listByPid(Long parent_id) {
-        List<CatVO> list = catService.listByPid(parent_id);
-        return ServerResponseEntity.success(list);
+    public List<CatVO> listByPid(Long parent_id) {
+
+        return catService.listByPid(parent_id);
     }
 
     @GetMapping("/platform_categories")
     @ApiOperation(value = "获取平台的分类列表信息")
-    public ServerResponseEntity<List<CatVO>> listPlatform() {
-        List<CatVO> list = catService.listPlatform();
-        return ServerResponseEntity.success(list);
+    public List<CatVO> listPlatform() {
+
+        return catService.listPlatform();
     }
 
     @GetMapping("/shop_categories")
     @ApiOperation(value = "获取店铺所有的分类信息")
-    public ServerResponseEntity<List<CatVO>> listShop() {
-        List<CatVO> list = catService.listShop();
-        return ServerResponseEntity.success(list);
+    public List<CatVO> listShop() {
+
+        return catService.listShop();
     }
 
 
