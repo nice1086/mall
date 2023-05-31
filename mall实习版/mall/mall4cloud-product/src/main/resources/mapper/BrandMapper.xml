@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mall4j.cloud.product.mapper.BrandMapper">
+    <select id="listByCid" parameterType="Long" resultMap="Long">
+       select brand_id
+       from category_brand where category_id = #{category_id}
+    </select>
+
+    <select id="listByBid" parameterType="Long" resultMap="BrandVO">
+       select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand where brand_id = #{brand_id}
+    </select>
+
+    <select id="listByCatid" parameterType="Long" resultMap="BrandVO">
+       select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand where brand_id = (select brand_id
+       from category_brand where category_id = #{category_id})
+    </select>
+
+    <select id="getPage" resultMap="BrandVO">
+        select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand
+    </select>
+
+    <select id="listBrand" resultMap="BrandVO">
+        select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand
+    </select>
+
+    <select id="listByBrid" resultMap="BrandVO">
+        select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand where brand_id = #{brand_id}
+    </select>
+
+    <insert id="insertBrand" parameterType="BrandVO">
+        insert into brand
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="brand_id != null and brand_id != ''">brand_id,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_time != null and update_time != ''">update_time,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
+            <if test="img_url != null and img_url != ''">img_url,</if>
+            <if test="first_letter != null and first_letter != ''">first_letter,</if>
+            <if test="seq != null and seq != ''">seq,</if>
+            <if test="status != null and status != ''">status,</if>
+        </trim>
+    </insert>
+
+    <update id="updateBrand" parameterType="BrandVO">
+        update brand
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="brand_id != null and brand_id != ''">brand_id,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_time != null and update_time != ''">update_time,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
+            <if test="img_url != null and img_url != ''">img_url,</if>
+            <if test="first_letter != null and first_letter != ''">first_letter,</if>
+            <if test="seq != null and seq != ''">seq,</if>
+            <if test="status != null and status != ''">status,</if>
+        </trim>
+    </update>
+
+    <delete id="deleteBrand" parameterType="Long">
+        delete from brand where brand_id = #{brand_id}
+    </delete>
+
+    <select id="getPageSelect" resultMap="BrandVO">
+        select brand_id,create_time,update_time,
+       `name`,`desc`,img_url,first_letter,seq,status
+       from brand
+    </select>
+
+    <update id="updateBrandStatus" parameterType="BrandVO">
+        update brand
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="brand_id != null and brand_id != ''">brand_id,</if>
+            <if test="create_time != null and create_time != ''">create_time,</if>
+            <if test="update_time != null and update_time != ''">update_time,</if>
+            <if test="name != null and name != ''">`name`,</if>
+            <if test="desc != null and desc != ''">`desc`,</if>
+            <if test="img_url != null and img_url != ''">img_url,</if>
+            <if test="first_letter != null and first_letter != ''">first_letter,</if>
+            <if test="seq != null and seq != ''">seq,</if>
+            <if test="status != null and status != ''">status,</if>
+        </trim>
+    </update>
+</mapper>
