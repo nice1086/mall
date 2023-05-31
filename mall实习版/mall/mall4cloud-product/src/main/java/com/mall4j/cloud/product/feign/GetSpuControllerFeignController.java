@@ -9,9 +9,13 @@ import com.mall4j.cloud.product.vo.app.SCartVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController("GetSpuFeignController")
+@RequestMapping("/ua/shop_cart")
 public class GetSpuControllerFeignController implements com.mall4j.cloud.api.product.feign.SpuFeignClient{
 
     @Autowired

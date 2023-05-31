@@ -29,7 +29,7 @@ public class SCartServiceImpl implements SCartService {
     }
 
     @Override
-    public List<SCartVO> deleteItems(Long cart_item_id) {
+    public List<SCartVO> deleteItems(List<Long> cart_item_id) {
         return sCartMapper.deleteItems(cart_item_id);
     }
 

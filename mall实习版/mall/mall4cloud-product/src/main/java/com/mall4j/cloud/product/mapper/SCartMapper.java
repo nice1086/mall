@@ -25,7 +25,7 @@ public interface SCartMapper {
 
     List<SCartVO> delete();
 
-    List<SCartVO> deleteItems(Long cart_item_id);
+    List<SCartVO> deleteItems(List<Long> cart_item_id);
 
     List<SCartVO> selectInfo();
 

@@ -50,13 +50,6 @@ public class SCartController {
         return ServerResponseEntity.success(list);
     }
 
-    @DeleteMapping("/delete_item")
-    @ApiOperation(value = "通过购物车id删除用户购物车物品", notes = "通过购物车id删除用户购物车物品")
-    public ServerResponseEntity<List<SCartVO>> deleteItems(Long cart_item_id) {
-        List<SCartVO> list = sCartService.deleteItems(cart_item_id);
-        return ServerResponseEntity.success(list);
-    }
-
     @GetMapping("/info")
     @ApiOperation(value = "获取用户购物车信息", notes = "获取用户购物车信息")
     public List<SCartVO> selectInfo() {

@@ -41,7 +41,7 @@
         delete from shop_cart_item
     </delete>
 
-    <delete id="deleteItems" parameterType="Long">
+    <delete id="deleteItems" parameterType="List">
         delete from shop_cart_item where cart_item_id = #{cart_item_id}
     </delete>
 
